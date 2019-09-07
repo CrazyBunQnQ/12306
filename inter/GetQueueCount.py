@@ -8,6 +8,7 @@ import wrapcache
 import TickerConfig
 from config.TicketEnmu import ticket
 from config.emailConf import sendEmail
+from config.iftttConf import sendIFTTT
 from config.pushbearConf import sendPushBear
 from config.urlConf import urls
 from inter.ConfirmSingleForQueue import confirmSingleForQueue
@@ -128,6 +129,7 @@ class queryQueueByAfterNate:
                 print("".join(queryQueueByAfterNateRsp.get("messages")) or queryQueueByAfterNateRsp.get("validateMessages"))
                 time.sleep(1)
             else:
+                sendIFTTT(ticket.WAIT_ORDER_SUCCESS)
                 sendEmail(ticket.WAIT_ORDER_SUCCESS)
                 sendPushBear(ticket.WAIT_ORDER_SUCCESS)
                 raise ticketIsExitsException(ticket.WAIT_AFTER_NATE_SUCCESS)

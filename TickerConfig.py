@@ -92,6 +92,13 @@ PUSHBEAR_CONF = {
     "send_key": ""
 }
 
+# 是否开启 IFTTT_WEBHOOKS 提醒
+# "webhooks_url": "https://maker.ifttt.com/trigger/your_event_name/with/key/your_key",
+IFTTT_CONF = {
+    "is_ifttt": True,
+    "webhooks_url": "https://maker.ifttt.com/trigger/your_event_name/with/key/your_key",
+}
+
 # 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭
 IS_CDN = 1
 
